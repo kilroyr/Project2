@@ -12,14 +12,27 @@ const Search = () => {
 
   const onSubmit = (e) => {
     e.preventDefault()
+    console.log(searchTerm)
     let slug = searchTerm.split(' ').join('-').toLowerCase()
 
+
+    const apiKey = '3b2f386895764e1b8cefdc8aff052328';
+
     setGameResults([])
-    fetch(`https://rawg.io/api/games?search=${slug}`)
-    .then(resp => resp.json())
+    fetch(`https://rawg.io/api/games?search=${slug}&key=${apiKey}`)
+    .then(resp => {
+      if (!resp.ok) {
+        throw new Error(`HTTP error! status: ${resp.status}`);
+      }
+      return resp.json();
+    })
     .then(({results}) => {
+      console.log(results); 
       results === undefined ? alert('no games found') : setGameResults(results)
     })
+    .catch(error => {
+      console.error('Error:', error);
+    });
     setSearchTerm("")
   }
 

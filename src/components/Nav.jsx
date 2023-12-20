@@ -9,13 +9,12 @@ const Nav = () => {
 
   return (
     <nav>
-      <ul className='nav-links'>
-        <Link style={navStyle} to={'/topgames'}>
-        <li>Top Games</li>
-        </Link>
-        <Link style={navStyle} to={'/search'}>
-        <li>Search</li>
-        </Link>
+      <ul>
+        <li><Link style={navStyle} to="/topgames">Top Games</Link></li>
+        <li><Link style={navStyle} to="/action">Action</Link></li>
+        <li><Link style={navStyle} to="/strategy">Strategy</Link></li>
+        <li><Link style={navStyle} to="/wishlist">Wishlist</Link></li>
+        <li><Link style={navStyle} to="/search">Search</Link></li>
       </ul>
     </nav>
   );

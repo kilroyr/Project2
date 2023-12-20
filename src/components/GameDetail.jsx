@@ -1,32 +1,25 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const GameDetail = () => {
-  const location = useLocation();
-  const { game } = location.state;
+  const { slug } = useParams();
+  const [game, setGame] = useState(null);
+  // const apiKey = '3b2f386895764e1b8cefdc8aff052328';
+  useEffect(() => {
+    fetch(`https://api.rawg.io/api/games/${slug}?key=3b2f386895764e1b8cefdc8aff052328`)
+      .then(response => response.json())
+      .then(data => setGame(data));
+  }, [slug]);
+
+  if (!game) return <div>Loading...</div>;
 
   return (
     <div>
       <h1>{game.name}</h1>
-      <p>Released: {game.released}</p>
-      <p>Rating: {game.rating}</p>
-      <h3>Genre(s):</h3>
-      { 
-        game.genres.map(g => `${g.name} | `)
-      }
-
-      <h3>Platform(s):</h3>
-      { 
-        game.platforms.map(p => `${p.platform.name} | `)
-      }
-
-      <ul>
-        {
-          game.short_screenshots.map(ss => <li><img src={ss.image} alt='screenshot'></img></li>)
-               }
-      </ul>
+      <img src={game.background_image} alt={game.name} />
+      <p>{game.description}</p>
     </div>
   );
-}
+};
 
 export default GameDetail;
