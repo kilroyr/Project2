@@ -14,17 +14,17 @@ const Action = () => {
   }, []);
 
   return (
-    <div>
-      <ul>
+    <div className="game-list">
+     <ul>
         {games.map(game => (
-          <li key={game.id}>
+          <li className="game" key={game.id}>
             <Link to={`/game/${game.slug}`}>
               <h3>{game.name}</h3>
               <img src={game.background_image} alt="game"/>
             </Link>
           </li>
         ))}
-      </ul>
+     </ul>
     </div>
   );
 };

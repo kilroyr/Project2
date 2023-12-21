@@ -57,10 +57,9 @@ export default function WishList() {
   };
 
   return (
-    <div>
+     <div className="wishlist">
       {games.map((game) => (
-        <div key={game.id}>
-          <h1>Wishlist</h1>
+        <div className="game" key={game.id}>
           <h2>{game.fields.name}</h2>
           <p>{game.fields.description}</p>
           <img src={game.fields.image} alt={game.fields.name} />

@@ -37,14 +37,14 @@ const Search = () => {
   }
 
   return (
-    <div className="game-search">
-      <h1>Game Search</h1>
-        <form onSubmit={onSubmit}>
-          <input type="text" value={searchTerm} onChange={handleChange}/>
-          <br></br>
-          <input type="submit"/>
-        </form>
-        <Results gameResults={gameResults} />
+    <div className="search-form">
+    <h1>Game Search</h1>
+    <form onSubmit={onSubmit}>
+      <input type="text" value={searchTerm} onChange={handleChange}/>
+      <br></br>
+      <input type="submit"/>
+    </form>
+    <Results gameResults={gameResults} />
     </div>
   );
 }

@@ -54,16 +54,16 @@ const GameDetail = () => {
   if (!game) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h1>{game.name}</h1>
-      <img src={game.background_image} alt={game.name} />
-      <p>{game.description}</p>
-      <p>Released: {game.released}</p>
-      <p>Rating: {game.rating}</p>
-      <p>Metacritic: {game.metacritic}</p>
-      <a href={game.website}>Official Website</a>
-      <button onClick={() => handleAddToWishlist(game)}>Add to Wishlist</button>
-    </div>
+    <div className="game-details">
+    <h1>{game.name}</h1>
+    <img src={game.background_image} alt={game.name} />
+    <p>{game.description}</p>
+    <p>Released: {game.released}</p>
+    <p>Rating: {game.rating}</p>
+    <p>Metacritic: {game.metacritic}</p>
+    <a href={game.website}>Official Website</a>
+    <button onClick={() => handleAddToWishlist(game)}>Add to Wishlist</button>
+  </div>
   );
 };
 

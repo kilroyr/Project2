@@ -17,16 +17,16 @@ const TopGames = () => {
   }
 
   return (
-    <div>
+    <div className="top-games">
       <ul>
-      {games.map(game => (
-  <li key={game.id}>
-    <Link to={`/game/${game.slug}`}>
-      <h3>{game.name}</h3>
-      <img src={game.background_image} alt="game"/>
-    </Link>
-  </li>
-))}
+          {games.map(game => (
+          <li key={game.id}>
+           <Link to={`/game/${game.slug}`}>
+            <h3>{game.name}</h3>
+            <img src={game.background_image} alt="game"/>
+           </Link>
+          </li>
+          ))}
       </ul>
     </div>
   )

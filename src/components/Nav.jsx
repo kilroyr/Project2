@@ -10,7 +10,7 @@ const Nav = () => {
   return (
     <nav>
       <ul>
-        <li><Link style={navStyle} to="/">Top Games</Link></li>
+        <li><Link style={navStyle} to="/">Popular Games</Link></li>
         <li><Link style={navStyle} to="/action">Action</Link></li>
         <li><Link style={navStyle} to="/strategy">Strategy</Link></li>
         <li><Link style={navStyle} to="/wishlist">Wishlist</Link></li>
