@@ -16,9 +16,9 @@ const Strategy = () => {
   return (
     <div>
       <ul>
-        {games.map(game => (
-          <li key={game.id}>
-            <Link to={{ pathname: `/game/${game.name}`, state: { game } }}>
+              {games.map(game => (
+             <li key={game.id}>
+             <Link to={`/game/${game.slug}`}>
               <h3>{game.name}</h3>
               <img src={game.background_image} alt="game"/>
             </Link>

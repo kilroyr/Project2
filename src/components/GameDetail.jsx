@@ -7,9 +7,12 @@ const GameDetail = () => {
   // const apiKey = '3b2f386895764e1b8cefdc8aff052328';
   useEffect(() => {
     fetch(`https://api.rawg.io/api/games/${slug}?key=3b2f386895764e1b8cefdc8aff052328`)
-      .then(response => response.json())
-      .then(data => setGame(data));
-  }, [slug]);
+    .then(response => response.json())
+    .then(data => {
+      console.log(slug);
+      console.log(`https://api.rawg.io/api/games/${slug}?key=3b2f386895764e1b8cefdc8aff052328`);
+    });
+}, [slug]);
 
   if (!game) return <div>Loading...</div>;
 
@@ -18,6 +21,10 @@ const GameDetail = () => {
       <h1>{game.name}</h1>
       <img src={game.background_image} alt={game.name} />
       <p>{game.description}</p>
+      <p>Released: {game.released}</p>
+      <p>Rating: {game.rating}</p>
+      <p>Metacritic: {game.metacritic}</p>
+      <a href={game.website}>Official Website</a>
     </div>
   );
 };
