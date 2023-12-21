@@ -42,6 +42,7 @@ const GameDetail = () => {
         fields: {
           name: game.name,
           description: game.description,
+          image: game.background_image,
         },
       }),
     });
