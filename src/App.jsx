@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import GameDetail from "./components/GameDetail";
 import Action from "./components/Action";
 import Strategy from "./components/Strategy";
+import WishList from "./components/Wishlist";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' element={<TopGames />} />
           <Route path='/action' element={<Action />} />
           <Route path='/strategy' element={<Strategy />} />
+          <Route path='/wishlist' element={<WishList />} />
           <Route path='/search' element={<Search />} />
           <Route path='/game/:slug' element={<GameDetail />} />
         </Routes>
