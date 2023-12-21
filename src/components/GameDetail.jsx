@@ -7,12 +7,11 @@ const GameDetail = () => {
   // const apiKey = '3b2f386895764e1b8cefdc8aff052328';
   useEffect(() => {
     fetch(`https://api.rawg.io/api/games/${slug}?key=3b2f386895764e1b8cefdc8aff052328`)
-    .then(response => response.json())
-    .then(data => {
-      console.log(slug);
-      console.log(`https://api.rawg.io/api/games/${slug}?key=3b2f386895764e1b8cefdc8aff052328`);
-    });
-}, [slug]);
+      .then(response => response.json())
+      .then(data => {
+        setGame(data);
+      });
+       }, [slug]);
 
   if (!game) return <div>Loading...</div>;
 
