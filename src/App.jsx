@@ -7,7 +7,7 @@ import Nav from "./components/Nav";
 import GameDetail from "./components/GameDetail";
 import Action from "./components/Action";
 import Strategy from "./components/Strategy";
-import WishList from "./components/Wishlist";
+import WishList from "./components/WishList";
 
 
 function App() {

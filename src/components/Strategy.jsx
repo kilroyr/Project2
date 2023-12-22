@@ -14,18 +14,18 @@ const Strategy = () => {
   }, []);
 
   return (
-    <div>
+    <div className="game-list">
       <ul>
-              {games.map(game => (
-             <li key={game.id}>
-             <Link to={`/game/${game.slug}`}>
+        {games.map(game => (
+          <li className="game" key={game.id}>
+            <Link to={`/game/${game.slug}`}>
               <h3>{game.name}</h3>
               <img src={game.background_image} alt="game"/>
             </Link>
           </li>
         ))}
       </ul>
-    </div>
+     </div>
   );
 };
 
